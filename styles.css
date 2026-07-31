@@ -1,0 +1,213 @@
+/* ================= REGLAS GENERALES Y RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #358fe9;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= CABECERA (FLEXBOX) ================= */
+.main-header {
+    background-color: #d13232;
+    padding: 20px 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between; /* Distribuye logo a la izquierda y nav a la derecha */
+    align-items: center;            /* Alineación vertical perfecta */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h2 {
+    color: #b8bb27;
+}
+
+.logo h2 span {
+    color: #7916ca;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px; /* Separación constante entre enlaces gracias a Flexbox */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #c3c52c;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #3b82f6;
+}
+
+/* ================= SECCIÓN HERO (FLEXBOX) ================= */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    background: linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 100%);
+    flex-wrap: wrap; /* Permite que baje si la pantalla es pequeña (Responsivo) */
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1 1 450px; /* Crece, se encoge y tiene una base de 450px */
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+    transition: background 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #2563eb;
+}
+
+.hero-image {
+    flex: 1 1 450px;
+    display: flex;
+    justify-content: center; /* Centra la ilustración internamente */
+}
+
+.hero-image img {
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* ================= SECCIÓN TARJETAS (FLEXBOX MULTILÍNEA) ================= */
+.services-section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;        /* Clave para envolver las tarjetas en pantallas pequeñas */
+    justify-content: center; /* Centra las tarjetas si sobra espacio */
+    gap: 30px;              /* Espaciado uniforme en 2D gracias a Flexbox moderno */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column; /* Alinea la imagen y el texto de la tarjeta verticalmente */
+    flex: 1 1 300px;        /* Permite un comportamiento fluido (mínimo 300px) */
+    max-width: 380px;       /* Evita que se estiren demasiado en pantallas medianas */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de tus banners */
+}
+
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Hace que el contenido ocupe todo el espacio sobrante */
+}
+
+.card-body h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.card-body p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ================= PIE DE PÁGINA (FLEXBOX) ================= */
+.main-footer {
+    margin-top: auto; /* Empuja el footer al final de la página si hay poco contenido */
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
